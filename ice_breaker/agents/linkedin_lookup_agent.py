@@ -7,9 +7,9 @@ from langchain.agents import create_react_agent, AgentExecutor
 from tools.tools import get_profile_url
 
 
-def lookup(name: str, company: str) -> str:
+def lookup(name: str) -> str:
     llm = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo")
-    template = """given the full name {name_of_person} and company that {name_of_person} works at {company} I want you to get me a link to their LinkedIn profile page.
+    template = """given the full name {name_of_person} I want you to get me a link to their LinkedIn profile page.
     Your answer should contain only a URL"""
 
     tools_for_agent = [
@@ -39,7 +39,7 @@ def lookup(name: str, company: str) -> str:
     )
 
     result = agent_executor.invoke(
-        input={"input": prompt_template.format_prompt(name_of_person=name, company=company)}
+        input={"input": prompt_template.format_prompt(name_of_person=name)}
     )
 
     return result
