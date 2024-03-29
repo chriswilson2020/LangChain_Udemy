@@ -9,6 +9,8 @@ langchain-openai = "*"
 langchain = "*"
 langchainhub = "*"
 google-search-results = "*"
+flask = "*"
+python-dotenv = "*"
 
 [dev-packages]
 

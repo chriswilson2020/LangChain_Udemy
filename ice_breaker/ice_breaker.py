@@ -9,7 +9,7 @@ from output_parsers import person_intel_parser, PersonIntel
 name = "Harrison Chase"
 
 
-def ice_break(name: str) -> Tuple[PersonIntel, str]:
+def ice_break(name: str) -> tuple[PersonIntel, str]:
     linkedin_profile_url = linkedin_lookup_agent(name=name)
     linkedin_data = scrape_linkedin_profile(
         linkedin_profile_url=linkedin_profile_url["output"]
