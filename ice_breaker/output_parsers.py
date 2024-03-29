@@ -24,5 +24,5 @@ def to_dict(self):
         "ice_breakers": self.ice_breakers,
     }
 
-person_intel_parser = PydanticOutputParser(pydantic_object=PersonIntel)
 
+person_intel_parser = PydanticOutputParser(pydantic_object=PersonIntel)
