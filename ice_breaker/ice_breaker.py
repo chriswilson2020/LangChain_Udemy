@@ -36,7 +36,9 @@ def ice_break(name: str) -> tuple[PersonIntel, str]:
     output = chain.invoke(input={"information": linkedin_data})
 
     print(output["text"])
-    return person_intel_parser.parse(output["text"]), linkedin_data.get("profile_pic_url")
+    return person_intel_parser.parse(output["text"]), linkedin_data.get(
+        "profile_pic_url"
+    )
 
 
 if __name__ == "__main__":
